@@ -14,7 +14,7 @@ public class ArticleDaoImpl implements IArticleDao {
 	
 	@Override
 	public List<Article> getArticlesByCategory(int categoryID) {
-		Connection connection = singletonConnection.getConnection();
+		Connection connection = SingletonConnection.getConnection();
 		List<Article> articles = new ArrayList<>();
 		String query = "SELECT * FROM Articles WHERE category_id = ?";
 		try {
@@ -42,7 +42,7 @@ public class ArticleDaoImpl implements IArticleDao {
 	@Override
 	public Article getArticle(int articleId) {
 		Article article = null;
-		Connection connection = singletonConnection.getConnection();
+		Connection connection = SingletonConnection.getConnection();
 		String query = "SELECT * FROM Articles WHERE idarticle = ?";
 		try {
 			PreparedStatement prdStmt = connection.prepareStatement(query);

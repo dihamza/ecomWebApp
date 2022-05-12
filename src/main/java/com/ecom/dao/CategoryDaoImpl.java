@@ -13,7 +13,7 @@ public class CategoryDaoImpl implements ICategoryDao{
 
 	@Override
 	public List<Category> getCategories() {
-		Connection connection = singletonConnection.getConnection();
+		Connection connection = SingletonConnection.getConnection();
 		List<Category> categories = new ArrayList<>();
 		String query = "SELECT * FROM categories";
 		try {

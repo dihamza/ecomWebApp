@@ -3,7 +3,7 @@ package com.ecom.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class singletonConnection {
+public class SingletonConnection {
 	private static Connection connection;
 	static {
 		try {
